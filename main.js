@@ -136,7 +136,7 @@ function renderJob() {
 
 function setStatus() {
   const doneStatus = document.querySelector(".done-status");
-  doneStatus.innerText = "(" + todoListDone.length + ")";
+  doneStatus.innerText = todoListDone.length + "/" + todoList.length;
 }
 
 function addJob(job) {
