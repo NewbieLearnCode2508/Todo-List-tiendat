@@ -46,8 +46,8 @@ button {
   transform: translate(-50%, -50%);
   pointer-events: none;
   user-select: none;
-  transition: .2s;
-  transition-property: transform, background-color; 
+  transition: 0.2s;
+  transition-property: transform, background-color;
   box-shadow: 0 0 10px 4px #ccc;
   backdrop-filter: blur(2px);
 }
@@ -128,12 +128,14 @@ button {
   opacity: 0.8;
 }
 
+.not-todo-list,
 .todo-list {
   margin-top: 18px;
   width: 100%;
   position: relative;
 }
 
+.not-todo-job,
 .todo-job {
   font-size: 2.2rem;
   flex-direction: row;
@@ -209,6 +211,7 @@ button {
   display: block;
 }
 
+.not-todo-job-item,
 .todo-job-item {
   width: 100%;
   flex-direction: row;
@@ -218,10 +221,12 @@ button {
   font-weight: 600;
 }
 
+.not-todo-job-item span,
 .todo-job-item span {
   transition: 0.2s;
 }
 
+.not-done-status-wrap,
 .done-status-wrap {
   font-size: 1.8rem;
   font-weight: 600;
