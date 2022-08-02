@@ -18,6 +18,7 @@ body {
 
 :root {
   --text-color: #000;
+  --mouse-color: #fff;
 }
 
 ul,
@@ -37,11 +38,30 @@ button {
 }
 
 .mouse-point {
-  width: 18px;
-  height: 18px;
-  background-color: #fff;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--mouse-color);
   border-radius: 100rem;
   position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+  transition: .2s;
+  transition-property: transform, background-color; 
+  box-shadow: 0 0 10px 4px #ccc;
+  backdrop-filter: blur(2px);
+}
+
+.mouse-point.clicked {
+  background-color: transparent;
+  border: 1px solid #000;
+  box-shadow: none;
+  transform: scale(1.4) translate(-25%, -25%);
+  z-index: 1;
+}
+
+.link-hovered {
+  color: #fff;
 }
 
 .center {
@@ -59,6 +79,7 @@ button {
   margin-top: 24px;
   font-size: 6rem;
   font-family: "Square Peg", cursive;
+  user-select: none;
 }
 
 .items {
@@ -68,7 +89,7 @@ button {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 0 0 rgb(0 0 0 / 50%);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .items:hover {
@@ -110,6 +131,7 @@ button {
 .todo-list {
   margin-top: 18px;
   width: 100%;
+  position: relative;
 }
 
 .todo-job {
@@ -193,6 +215,11 @@ button {
   position: relative;
   font-family: "Square Peg", cursive;
   font-size: 3rem;
+  font-weight: 600;
+}
+
+.todo-job-item span {
+  transition: 0.2s;
 }
 
 .done-status-wrap {
